@@ -3,14 +3,15 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Contentful Demo For TEam`,
+    title: `Gatsby Contentful Demo For Team`,
     siteUrl: `https://www.yourdomain.tld`
   },
   plugins: [{
     resolve: 'gatsby-source-contentful',
     options: {
-      "accessToken": "dD6Kun1ur0nlG08saGtibeJ4rOEwfuLWCV6oUOW2mJQ",
-      "spaceId": "sn3p6zss4gi9"
+      downloadLocal: true,
+      spaceId: process.env.CONTENTFUL_SPACE_ID,
+      accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
     }
   }, "gatsby-plugin-image", "gatsby-plugin-sharp", "gatsby-transformer-sharp"]
 };
